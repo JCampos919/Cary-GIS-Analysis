@@ -12,4 +12,4 @@ Link to school proximity analysis map:
 https://jcampos919.github.io/Cary-GIS-Analysis/School_proximity.html
 
 
-Created shapefile of burglary points by merging together burglary reports and the subdivision they occurred in with the city residential subdivision data. OSM map created here: https://jcampos919.github.io/Cary-GIS-Analysis/burglary_points_map.html
+Created shapefile of burglary points by merging together burglary reports and the subdivision they occurred in with the city residential subdivision data. OSM map created here: file:///C:/SHAPEFILES/Cary/POI_Subdivision_SCRIPT/CARY_GIS_ANALYSIS_GITHUB/subdivison-burglary-merge.html
