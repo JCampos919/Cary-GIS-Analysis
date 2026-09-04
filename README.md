@@ -1,5 +1,7 @@
 ## ArcGIS StoryMap
-[Cary, NC Crime and Community Analysis]([https://arcg.is/0XKHjX0](https://arcg.is/0XKHjX0))
+Cary, NC Crime and Community Analysis 
+
+https://arcg.is/0XKHjX0](https://arcg.is/0XKHjX0
 
 
 # Cary-GIS-Analysis
