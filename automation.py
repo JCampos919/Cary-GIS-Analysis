@@ -3,16 +3,19 @@ import pandas as pd
 import folium
 import os
 
-# TODO: reproject shapefiles to new CRS
+##### Function to reproject any shapefiles into a desired coordinate system #####
 
 def load_and_reproject(file_path):
     data = gpd.read_file(file_path)
     reprojected_data = data.to_crs(epsg=32617)
     return reprojected_data
 
-folder = r"C:\SHAPEFILES\Cary\CRS_32617"
+##### Example of use in folder #####
 
+folder = r"C:\SHAPEFILES\Cary\CRS_32617"
 cary_files = os.listdir(folder)
+
+##### Created empty dictionary to place shapefiles and using the file name as a key to locate desired dataframe of use in folder after reprojection #####
 
 reprojected_files = {}
 for file_name in cary_files:
@@ -23,11 +26,7 @@ for file_name in cary_files:
         key = file_name.replace(".shp", "")
         reprojected_files[key] = reprojected_shp
 
-test_file = reprojected_files["streets_32617"]
-total_rows = len(reprojected_files["streets_32617"].count())
-
-
-# TODO: #### Summarize ######
+##### Function to Summarize a desired data frame obtaining layer name, total rows, CRS, geometry and columns in a list ######
 
 def summarize_layer(file, name):
     print(f"Layer name: {name}")
@@ -39,20 +38,18 @@ def summarize_layer(file, name):
     print(f"Columns: {columns_list}")
 
 
-# for name, gdf in reprojected_files.items():
-#     summarize_layer(gdf, name)
-#     print("---")
+for name, gdf in reprojected_files.items():
+  summarize_layer(gdf, name)
+  print("---")
 
+##### Exporting shapefiles into geopackages and storing into new file ######
 
-# TODO: # #### Summarize ######
-# path = "C:\SHAPEFILES\Cary\"
+# New File path
+path = "C:\SHAPEFILES\Cary\"
 
 for name, gdf in reprojected_files.items():
     output_folder = r"C:\SHAPEFILES\Cary\Automation_Script"
     layer_name = f"{name}.gpkg"
     file_path = os.path.join(output_folder, layer_name)
     gdf.to_file(file_path, driver="GPKG")
-
-
-
 
